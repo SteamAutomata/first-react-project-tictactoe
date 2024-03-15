@@ -106,12 +106,7 @@ function Game() {
 	}
 
 	const moves = history.map((squares, move) => {
-		let description
-		if (move > 0) {
-			description = "Aller au coup #" + move
-		} else {
-			description = "Revenir au début"
-		}
+		let description = move > 0 ? "Aller au coup #" + move : "Revenir au début"
 		return (
 			<li key={move}>
 				<button onClick={() => jumpTo(move)}>{description}</button>
@@ -135,8 +130,4 @@ function Game() {
 	)
 }
 
-function App() {
-	return <Game />
-}
-
-export default App
+export default Game
